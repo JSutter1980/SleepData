@@ -50,13 +50,14 @@ else if (resp == "2")
         while (!sr.EndOfStream)
         {
             string line = sr.ReadLine();
-            string[] date = line.Split(',');
-            string[] hours = line.Split('|');
+            string[] arr = line.Split(',');
+            string[] hours = arr[1].Split('|');
+            DateTime dt = DateTime.Parse(arr[0]);
 
-            Console.WriteLine($" Week of {0}", date[0]);
+            Console.WriteLine($" Week of {0:yyyy}", dt);
             Console.WriteLine($"Su Mo Tu We Th Fr Sa");
             Console.WriteLine($"-- -- -- -- -- -- --");
-            //Console.WriteLine("{1} {2} {3} {4} {5} {6} {7}", hours[0],hours[1],hours[2],hours[3],hours[4],hours[5],hours[6],hours[7]);
+            Console.WriteLine("{0} {1} {2} {3} {4} {5} {6}", hours[0],hours[1],hours[2],hours[3],hours[4],hours[5],hours[6]);
 
         }
 
