@@ -8,7 +8,7 @@ string? resp = Console.ReadLine();
 
 if (resp == "1")
 {
-        // create data file
+    // create data file
 
     // ask a question
     Console.WriteLine("How many weeks of data is needed?");
@@ -20,9 +20,9 @@ if (resp == "1")
     DateTime dataEndDate = today.AddDays(-(int)today.DayOfWeek);
     // subtract # of weeks from endDate to get startDate
     DateTime dataDate = dataEndDate.AddDays(-(weeks * 7));
-        // random number generator
+    // random number generator
     Random rnd = new Random();
-// create file
+    // create file
     StreamWriter sw = new StreamWriter("data.txt");
     // loop for the desired # of weeks
     while (dataDate < dataEndDate)
@@ -40,10 +40,23 @@ if (resp == "1")
         // add 1 week to date
         dataDate = dataDate.AddDays(7);
     }
-     sw.Close();
+    sw.Close();
 }
 else if (resp == "2")
 {
-    // TODO: parse data file
+    if (File.Exists("data.txt"))
+    {
+        StreamReader sr = new StreamReader("data.txt");
+        while (!sr.EndOfStream)
+        {
+            string line = sr.ReadLine();
+
+            Console.WriteLine(line);
+
+        }
+
+        sr.Close();
+    }
+
 
 }
