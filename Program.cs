@@ -57,7 +57,7 @@ else if (resp == "2")
             Console.WriteLine($" Week of {dt:MMM} {dt:dd}, {dt:yyyy}", dt);
             Console.WriteLine($" Su  Mo  Tu  We  Th  Fr  Sa");
             Console.WriteLine($" --  --  --  --  --  --  --");
-            Console.WriteLine("  {0,-3} {1,-2} {2,-4} {3,-2} {4,-3} {5,-3} {6}/n", hours[0],hours[1],hours[2],hours[3],hours[4],hours[5],hours[6]);
+            Console.WriteLine("  {0,-3} {1,-2} {2,-4} {3,-2} {4,-3} {5,-3} {6}\n", hours[0],hours[1],hours[2],hours[3],hours[4],hours[5],hours[6]);
             
 
         }
